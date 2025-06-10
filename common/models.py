@@ -15,7 +15,7 @@ class ServiceCategory(models.Model):
     video =  models.FileField(upload_to='common/service_category/video/')
 
     def __str__(self):
-        return self.title
+        return f'{self.id} - {self.title}'
 
 
 class Service(models.Model):
@@ -25,7 +25,7 @@ class Service(models.Model):
     category = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.title
+        return f'{self.id} - {self.title}'
     
 
 class Gallery(models.Model):
@@ -48,7 +48,7 @@ class AboutUs(models.Model):
     image = models.ImageField(upload_to='common/about_us/image/')
 
     def __str__(self):
-        return self.title
+        return f'{self.id} - {self.title_uz}'
     
 
 class Team(models.Model):
@@ -57,6 +57,6 @@ class Team(models.Model):
     position = models.CharField(max_length=250)
 
     def __str__(self):
-        return self.full_name
+        return f'{self.id} - {self.full_name}'
     
 

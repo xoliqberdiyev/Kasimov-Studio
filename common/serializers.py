@@ -14,13 +14,18 @@ class VideoSerializer(serializers.ModelSerializer):
 class ServiceCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = models.ServiceCategory
-        fields = '__all__'
+        fields = [
+            'id', 'title_uz', 'title_ru', 'description_uz', 'description_ru', 'image', 'video'
+        ]
 
     
 class ServiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Service
-        fields = '__all__'
+        fields = [
+            'id', 'title_uz', 'title_ru', 'description_uz', 'description_ru', 'image', 'category__name'
+        ]
+
 
 
 class GallerySerializer(serializers.ModelSerializer):
@@ -38,11 +43,15 @@ class PartnerSerializer(serializers.ModelSerializer):
 class AboutUsSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.AboutUs
-        fields = '__all__'
+        fields = [
+            'id', 'title_uz', 'title_ru', 'image'
+        ]
 
     
 class TeamSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Team
-        fields = '__all__'
+        fields = [
+            'id', 'full_name', 'position'
+        ]
 

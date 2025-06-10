@@ -11,14 +11,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-!q(^@4z32+nr!u_+75^@675x953g&-zc)^gn(bg1^3@*r4byia'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['kasimov.repid.uz']
+ALLOWED_HOSTS = ['kasimov.repid.uz', '127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    "jazzmin",
+    "modeltranslation",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -135,3 +137,10 @@ CORS_ALLOWED_ORIGINS = [
 CSRF_TRUSTED_ORIGINS = [
     "https://kasimov.repid.uz",
 ]
+
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
+LANGUAGES = (
+    ('ru', 'Russian'),
+    ('uz', 'Uzbek'),
+)
