@@ -23,7 +23,7 @@ class ServiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Service
         fields = [
-            'id', 'title_uz', 'title_ru', 'description_uz', 'description_ru', 'image', 'category__name'
+            'id', 'title_uz', 'title_ru', 'description_uz', 'description_ru', 'image', 'category'
         ]
 
 
