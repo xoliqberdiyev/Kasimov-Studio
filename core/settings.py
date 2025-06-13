@@ -132,10 +132,13 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "https://azim-studio-git-main-repids-projects.vercel.app",
     "https://azim-studio-rho.vercel.app",
+    "https://www.kasimovstudio.uz",
+    "https://kasimovstudio.uz",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "https://kasimov.repid.uz",
+    "https://admin.kasimovstudio.uz"
 ]
 
 
