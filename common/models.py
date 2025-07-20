@@ -23,7 +23,7 @@ class Service(models.Model):
     category = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{self.id} - {self.title}'
+        return f'{self.id} - {self.file.name}'
     
 
 class Gallery(models.Model):
