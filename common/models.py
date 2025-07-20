@@ -21,7 +21,7 @@ class ServiceCategory(models.Model):
 class Service(models.Model):
     title = models.CharField(max_length=250)
     description = models.TextField()
-    image = models.ImageField(upload_to='kasimov/service/image/')
+    file = models.FileField(upload_to='kasimov/service/image/', null=True)
     category = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE)
 
     def __str__(self):
