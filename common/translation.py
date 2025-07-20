@@ -13,11 +13,6 @@ class ServiceCategoryTranslation(TranslationOptions):
     fields = ['title', 'description']    
 
 
-@register(models.Service)
-class ServiceTranslation(TranslationOptions):
-    fields = ['title', 'description']    
-
-
 @register(models.Team)
 class TeamTranslation(TranslationOptions):
     fields = ['position']    
