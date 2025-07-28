@@ -6,16 +6,25 @@ class Video(models.Model):
 
     def __str__(self):
         return self.video.name
+
+    def delete(self):
+        self.video.delete()
+        return super().delete()
     
 
 class ServiceCategory(models.Model):
     title = models.CharField(max_length=250)
     description = models.TextField()
-    image = models.ImageField(upload_to='kasimov/service_category/image/')
-    video =  models.FileField(upload_to='kasimov/service_category/video/')
+    image = models.ImageField(upload_to='kasimov/service_category/image/', blank=True)
+    video =  models.FileField(upload_to='kasimov/service_category/video/', null=True)
 
     def __str__(self):
         return f'{self.id} - {self.title}'
+
+    def delete(self):
+        self.image.delete()
+        self.video.delete()
+        return super().delete()
 
 
 class Service(models.Model):
@@ -24,14 +33,22 @@ class Service(models.Model):
 
     def __str__(self):
         return f'{self.id} - {self.file.name}'
-    
+
+    def delete(self):
+        self.file.delete()
+        return super().delete()    
+
 
 class Gallery(models.Model):
     image = models.ImageField(upload_to='kasimov/gallery/')
 
     def __str__(self):
         return self.image.name
-    
+
+    def delete(self):
+        self.image.delete()
+        return super().delete()    
+
 
 class Partner(models.Model):
     icon = models.ImageField(upload_to='kasimov/partner/')
@@ -40,6 +57,10 @@ class Partner(models.Model):
     def __str__(self):
         return self.link if self.link else self.icon.name
     
+    def delete(self):
+        self.icon.delete()
+        return super().delete()
+
 
 class AboutUs(models.Model):
     title = models.CharField(max_length=250)
@@ -47,7 +68,11 @@ class AboutUs(models.Model):
 
     def __str__(self):
         return f'{self.id} - {self.title_uz}'
-    
+
+    def delete(self):
+        self.image.delete()
+        return super().delete    
+
 
 class Team(models.Model):
     image = models.ImageField(upload_to='kasimov/team/')
@@ -56,3 +81,7 @@ class Team(models.Model):
 
     def __str__(self):
         return f'{self.id} - {self.full_name}'
+
+    def delete(self):
+        self.image.delete()
+        return super().delete()
