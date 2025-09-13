@@ -117,8 +117,9 @@ USE_TZ = False
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static'
-MEDIA_URL = "https://1477816.servercore.cloud/"
-
+# MEDIA_URL = "https://1477816.servercore.cloud/"
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
@@ -146,17 +147,3 @@ LANGUAGES = (
     ('ru', 'Russian'),
     ('uz', 'Uzbek'),
 )
-
-
-DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-
-AWS_ACCESS_KEY_ID = "ab13231c33604420851f3288a805703b"
-AWS_SECRET_ACCESS_KEY = "342f429e1fb04f2e86959dc6c83b0c54"
-AWS_STORAGE_BUCKET_NAME = 'medias'  # faqat konteyner nomi!
-AWS_S3_ENDPOINT_URL = 'https://s3.uz-2.srvstorage.uz'  # HTTPS bilan!
-AWS_S3_REGION_NAME = "uz-2"
-AWS_S3_FILE_OVERWRITE = False
-AWS_QUERYSTRING_AUTH = False
-AWS_DEFAULT_ACL = "public-read"
-AWS_S3_CUSTOM_DOMAIN = "8d030fad-5687-4157-adf9-d7d72d42d14a.srvstatic.uz"
-DEFAULT_FILE_STORAGE = 'storage.storage_backends.MediaStorage'
